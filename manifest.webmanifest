@@ -1,0 +1,38 @@
+{
+  "name": "BOM-Genius Surveyor",
+  "short_name": "BOM-Genius",
+  "description": "Offline site survey, Wonderware/AVEVA SCADA BOM estimator and risk analyzer for Al Gurg Automation & Controls.",
+  "id": "./index.html",
+  "start_url": "./index.html?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#0b1d2e",
+  "theme_color": "#0b1d2e",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {"src": "icons/icon-72.png", "sizes": "72x72", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-96.png", "sizes": "96x96", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-128.png", "sizes": "128x128", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-144.png", "sizes": "144x144", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-152.png", "sizes": "152x152", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-384.png", "sizes": "384x384", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+    {"src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+  ],
+  "screenshots": [
+    {"src": "screenshots/screenshot-wide.png", "sizes": "1280x720", "type": "image/png", "form_factor": "wide", "label": "BOM and services estimator"},
+    {"src": "screenshots/screenshot-narrow.png", "sizes": "750x1334", "type": "image/png", "form_factor": "narrow", "label": "Site survey on mobile"}
+  ],
+  "shortcuts": [
+    {"name": "New Site Survey", "short_name": "Survey", "url": "./index.html?tab=survey", "icons": [{"src": "icons/icon-96.png", "sizes": "96x96"}]},
+    {"name": "BOM & Services", "short_name": "BOM", "url": "./index.html?tab=bom", "icons": [{"src": "icons/icon-96.png", "sizes": "96x96"}]},
+    {"name": "Risk & QHSE", "short_name": "Risk", "url": "./index.html?tab=risk", "icons": [{"src": "icons/icon-96.png", "sizes": "96x96"}]}
+  ]
+}

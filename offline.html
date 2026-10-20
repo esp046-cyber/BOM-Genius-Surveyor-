@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Offline | BOM-Genius Surveyor</title>
+<meta name="theme-color" content="#0b1d2e">
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0b1d2e;color:#e8f1f8;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;text-align:center;padding:24px}
+  .box{max-width:440px;border:2px solid #1e4a73;border-radius:14px;padding:28px;background:#0f2a43}
+  h1{margin:0 0 8px;font-size:1.5rem;color:#ff8a1f}
+  p{line-height:1.5;margin:8px 0}
+  button{margin-top:14px;padding:12px 22px;font-size:1rem;font-weight:700;border:0;border-radius:8px;background:#ff8a1f;color:#071522;cursor:pointer}
+  .s{font-size:.85rem;opacity:.8}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>You are offline</h1>
+  <p>No network connection was found. Your site surveys are stored on this device, so you can keep working.</p>
+  <p class="s" id="st">Checking connection...</p>
+  <button id="go">Open Survey Workspace</button>
+</div>
+<script>
+  var st=document.getElementById('st');
+  function go(){location.replace('index.html')}
+  document.getElementById('go').addEventListener('click',go);
+  function upd(){st.textContent=navigator.onLine?'Connection restored. Returning to your workspace...':'Still offline. The cached workspace will open in a moment.'}
+  window.addEventListener('online',function(){upd();setTimeout(go,800)});
+  window.addEventListener('offline',upd);
+  upd();
+  setTimeout(go,2500);
+</script>
+</body>
+</html>
