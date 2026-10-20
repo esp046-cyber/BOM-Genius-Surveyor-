@@ -1,5 +1,5 @@
 /* BOM-Genius Surveyor service worker: cache-first, network fallback, offline page, versioned cleanup */
-const VERSION = 'v1.3.0';
+const VERSION = 'v1.3.1';
 const SHELL_CACHE = 'bomgenius-shell-' + VERSION;
 const RUNTIME_CACHE = 'bomgenius-runtime-' + VERSION;
 const CORE = ['./', 'index.html', 'offline.html', 'manifest.webmanifest', 'css/styles.css', 'js/app.js', 'favicon.svg', 'robots.txt'];
