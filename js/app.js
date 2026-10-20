@@ -109,7 +109,8 @@ const INFO = {
   3: 'Redundancy: redundant app/IO servers double the application server, firewall and server count; a redundant historian doubles the historian licence and server. Ring topology adds one switch and design hours.',
   2: 'Distance above 90 m switches Cat6A to fiber (OS2) with SFP modules. Hot rooms add a cooling unit; no free panel space adds a new enclosure.'
 };
-const info = t => h('button', { type: 'button', class: 'info', title: t, 'aria-label': 'More information', onclick: e => { e.preventDefault(); e.stopPropagation(); toast(t, 7000); } }, '\u24D8');
+const info = t => h('button', { type: 'button', class: 'info', title: t, 'aria-label': 'More information', onclick: e => { e.preventDefault(); e.stopPropagation(); showTip(t); } }, '\u24D8');
+function showTip(t) { modal('modalTip', 'Info', h('p', { class: 'help', style: 'margin:0 0 4px' }, t)); }
 let riskFilter = 'All';
 
 /* ===================== STORAGE ===================== */
@@ -746,6 +747,7 @@ function switchTab(t) {
   renderActive(); scrollTo(0, 0);
 }
 $('#tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) switchTab(b.dataset.tab); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') $$('.modal').forEach(m => m.remove()); });
 const themeLabel = () => { $('#themeBtn').textContent = document.documentElement.dataset.theme === 'dark' ? 'Sunlight mode' : 'Control room mode'; };
 $('#themeBtn').addEventListener('click', () => { const r = document.documentElement, d = r.dataset.theme === 'dark' ? 'light' : 'dark'; r.dataset.theme = d; try { localStorage.setItem('bg_theme', d); } catch (e) { } themeLabel(); });
 function net() { const o = navigator.onLine, e = $('#netState'); e.textContent = o ? 'Online' : 'Offline'; e.className = 'pill ' + (o ? 'ok' : 'bad'); }
